@@ -1,5 +1,9 @@
 const express = require("express");
-const { uploadComplaintJSON } = require("../controllers/ipfsController");
+const {
+  uploadComplaintJSON,
+  uploadFeedbackJSON,
+  uploadResolutionJSON,
+} = require("../controllers/ipfsController");
 
 const router = express.Router();
 
@@ -10,5 +14,7 @@ router.get("/test", (req, res) => {
 });
 
 router.post("/complaint", uploadComplaintJSON);
+router.post("/feedback", uploadFeedbackJSON);
+router.post("/resolution", uploadResolutionJSON);
 
 module.exports = router;
